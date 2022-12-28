@@ -1,0 +1,48 @@
+{
+  "name": "cypress-bdd-cucumber",
+  "version": "1.0.0",
+  "description": "Projeto de automação usando Cypress e BDD com cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorrsbarbosa/cypress-bdd-cucumber.git"
+  },
+  "keywords": [
+    "Cypress",
+    "Cucumber",
+    "BDD",
+    "e2e"
+  ],
+  "author": "Vitor Barbosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitorrsbarbosa/cypress-bdd-cucumber/issues"
+  },
+  "homepage": "https://github.com/vitorrsbarbosa/cypress-bdd-cucumber#readme",
+  "devDependencies": {
+    "cypress": "^11.2.0",
+    "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@cypress/xpath": "^2.0.3",
+    "esbuild": "^0.16.12"
+  },
+  "cypress-cucumber-preprocessor": {
+    "skipCopyingScreenshots": true,
+    "stepDefinitions": [
+      "[filepath]/**/*.{js,ts}",
+      "[filepath].{js,ts}",
+      "cypress/e2e/step_definitions/*.{js,ts}"
+    ],
+    "html": {
+      "enabled": true
+    },
+    "messages": {
+      "enabled": true,
+      "output": "jsonlogs/messages.ndjson"
+    }
+  }
+}
+
